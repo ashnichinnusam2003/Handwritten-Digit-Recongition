@@ -3,16 +3,17 @@ import tensorflow as tf
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
+
 #PREPROCESSING PART
 
 mnist=tf.keras.datasets.mnist # loading the dataset mnist which contain the handwritten digit
 (x_train,y_train),(x_test,y_test)=mnist.load_data() # divide the datset into training and testing data.
 
 
- #CNN PART
+#CNN PART
 
 model = tf.keras.models.Sequential() # created the model
-model.add(tf.keras.layers.Flatten(input_shape(28 ,28))) # added a flatten layer
+model.add(tf.keras.layers.Flatten(input_shape=(28,28))) # added a flatten layer
 model.add(tf.keras.layers.Dense(128,activation='relu'))
 model.add(tf.keras.layers.Dense(10,activation='softmax'))
 
